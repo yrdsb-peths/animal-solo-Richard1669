@@ -8,19 +8,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Snake extends Actor
 {
-    /**
-     * Act - do whatever the Snake wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    GreenfootSound snakeSound = new GreenfootSound("snakehissing.mp3");
     public void act()
     {
         if(Greenfoot.isKeyDown("left"))
         {
-            move(-1);
+            move(-4);
         }
         else if (Greenfoot.isKeyDown("right"))
         {
-            move(1);
+            move(4);
         }
         
         // Remove apple if snake eats it
@@ -35,6 +32,7 @@ public class Snake extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.createApple();
             world.increaseScore();
+            snakeSound.play();
         }
     }
 }
