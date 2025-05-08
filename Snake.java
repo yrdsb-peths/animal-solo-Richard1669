@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Snake extends Actor
 {
     GreenfootSound snakeSound = new GreenfootSound("snakehissing.mp3");
+
     public void act()
     {
         if(Greenfoot.isKeyDown("left"))
